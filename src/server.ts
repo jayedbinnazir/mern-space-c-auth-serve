@@ -1,6 +1,3 @@
-function login(bool: Boolean) {
-  console.log("logged in");
-  return true;
-}
+import { Config } from "./config";
 
-login(true);
+console.log("environment variable", Config.PORT);
