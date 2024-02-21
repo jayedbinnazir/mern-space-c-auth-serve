@@ -1,3 +1,14 @@
+import app from "./app";
 import { Config } from "./config";
 
-console.log("environment variable", Config.PORT);
+const startServer = () => {
+  const PORT = Config.PORT;
+  try {
+    app.listen(PORT, () => {
+      console.log(`Listening to the server at ${PORT}`);
+    });
+  } catch (err) {
+    console.error(err);
+    process.exit(1);
+  }
+};
